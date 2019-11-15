@@ -58,6 +58,9 @@
                                                 <constraint firstItem="8KV-gf-Enl" firstAttribute="centerY" secondItem="TE9-qd-b0x" secondAttribute="centerY" id="wWw-bA-zFd"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="NLT-FX-iQt" kind="show" identifier="ShowFriendDetailSegue" id="afq-xW-z00"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -85,6 +88,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BPd-1c-dCY">
+            <objects>
+                <viewController id="NLT-FX-iQt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0qn-Yb-ZUh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxW-ZU-jeo">
+                                <rect key="frame" x="347" y="160" width="47" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hometown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyi-AX-WvX">
+                                <rect key="frame" x="319" y="189" width="75" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hobbies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CD7-hK-0T5">
+                                <rect key="frame" x="20" y="340" width="102" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8ball" translatesAutoresizingMaskIntoConstraints="NO" id="ug4-NT-OY4">
+                                <rect key="frame" x="20" y="160" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="bxL-ye-X0P"/>
+                                    <constraint firstAttribute="width" secondItem="ug4-NT-OY4" secondAttribute="height" multiplier="1:1" id="evv-OA-wzu"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="List of hobbies" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yIo-dE-sEl">
+                                <rect key="frame" x="20" y="394" width="374" height="468"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="e8d-d8-wyM" firstAttribute="bottom" secondItem="yIo-dE-sEl" secondAttribute="bottom" id="7nj-iN-tZ0"/>
+                            <constraint firstItem="UxW-ZU-jeo" firstAttribute="top" secondItem="e8d-d8-wyM" secondAttribute="top" constant="20" id="CW0-EU-rfw"/>
+                            <constraint firstItem="CD7-hK-0T5" firstAttribute="top" secondItem="ug4-NT-OY4" secondAttribute="bottom" constant="30" id="Cy3-Gp-JbJ"/>
+                            <constraint firstItem="e8d-d8-wyM" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CD7-hK-0T5" secondAttribute="trailing" constant="20" id="DGb-Og-H2i"/>
+                            <constraint firstItem="yIo-dE-sEl" firstAttribute="top" secondItem="CD7-hK-0T5" secondAttribute="bottom" constant="20" id="FuP-X1-rf5"/>
+                            <constraint firstItem="ug4-NT-OY4" firstAttribute="top" secondItem="e8d-d8-wyM" secondAttribute="top" constant="20" id="HS1-0R-Zga"/>
+                            <constraint firstItem="CD7-hK-0T5" firstAttribute="leading" secondItem="ug4-NT-OY4" secondAttribute="leading" id="MgS-v0-KBi"/>
+                            <constraint firstItem="e8d-d8-wyM" firstAttribute="trailing" secondItem="Cyi-AX-WvX" secondAttribute="trailing" constant="20" id="VMT-v9-5xF"/>
+                            <constraint firstItem="yIo-dE-sEl" firstAttribute="leading" secondItem="CD7-hK-0T5" secondAttribute="leading" id="XPM-qU-Chp"/>
+                            <constraint firstItem="UxW-ZU-jeo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ug4-NT-OY4" secondAttribute="trailing" constant="8" id="gp0-9q-BTC"/>
+                            <constraint firstItem="yIo-dE-sEl" firstAttribute="trailing" secondItem="Cyi-AX-WvX" secondAttribute="trailing" id="j7r-fK-YZQ"/>
+                            <constraint firstItem="Cyi-AX-WvX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ug4-NT-OY4" secondAttribute="trailing" constant="8" id="jzj-os-fHr"/>
+                            <constraint firstItem="e8d-d8-wyM" firstAttribute="trailing" secondItem="UxW-ZU-jeo" secondAttribute="trailing" constant="20" id="o9n-CH-rkV"/>
+                            <constraint firstItem="ug4-NT-OY4" firstAttribute="leading" secondItem="e8d-d8-wyM" secondAttribute="leading" constant="20" id="qt0-QT-u2U"/>
+                            <constraint firstItem="Cyi-AX-WvX" firstAttribute="top" secondItem="UxW-ZU-jeo" secondAttribute="bottom" constant="8" id="zvy-tH-PW3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e8d-d8-wyM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9Vg-5T-9GX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQT-bX-RTu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1837.68115942029" y="513.61607142857144"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2ks-2W-4kP">
@@ -180,4 +250,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="8ball" width="512" height="512"/>
+    </resources>
 </document>
